@@ -3,6 +3,7 @@ package com.mahoo.hippus.controller;
 import com.mahoo.hippus.common.ResultResponse;
 import com.mahoo.hippus.common.annotation.FormatRestController;
 import com.mahoo.hippus.common.annotation.NotFormatRequest;
+import com.mahoo.hippus.common.annotation.OperLog;
 import com.mahoo.hippus.dto.UserSigninDTO;
 import com.mahoo.hippus.model.User;
 import com.mahoo.hippus.service.UserService;
@@ -39,6 +40,8 @@ public class UserController {
         throw new Exception("fdsafds");
     }
 
+
+    @OperLog(operModule = "认证模块",operType = "用户注册", operDescription = "用户名密码注册")
     @PostMapping("/signin")
     public String userSignin(@Validated @RequestBody UserSigninDTO dto) {
         return "ok";
