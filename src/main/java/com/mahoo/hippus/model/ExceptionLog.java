@@ -12,7 +12,7 @@ import lombok.Data;
  * 接口异常记录表
  * @TableName exception_log
  */
-@TableName(value ="exception_log", schema = "public")
+@TableName(value ="exception_log")
 @Data
 public class ExceptionLog implements Serializable {
     /**

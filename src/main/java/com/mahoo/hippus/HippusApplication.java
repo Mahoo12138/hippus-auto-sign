@@ -8,7 +8,6 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 @SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 @MapperScan("com.mahoo.hippus.mapper")
 public class HippusApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(HippusApplication.class, args);
     }

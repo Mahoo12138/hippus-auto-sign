@@ -7,6 +7,7 @@ import com.mahoo.hippus.common.annotation.OperLog;
 import com.mahoo.hippus.dto.UserSigninDTO;
 import com.mahoo.hippus.model.User;
 import com.mahoo.hippus.service.UserService;
+import com.mahoo.hippus.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -45,5 +46,11 @@ public class UserController {
     @PostMapping("/signin")
     public String userSignin(@Validated @RequestBody UserSigninDTO dto) {
         return "ok";
+    }
+
+    @OperLog(operModule = "认证模块",operType = "用户登录", operDescription = "用户名密码登录")
+    @PostMapping("/login")
+    public String userLogin(@Validated @RequestBody UserSigninDTO dto) {
+        return JwtUtil.sign(dto.getUsername(), dto.getPassword());
     }
 }

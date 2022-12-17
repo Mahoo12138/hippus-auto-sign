@@ -12,7 +12,7 @@ import lombok.Data;
  * 接口操作记录表
  * @TableName operation_log
  */
-@TableName(value ="operation_log",schema = "public")
+@TableName(value ="operation_log")
 @Data
 public class OperationLog implements Serializable {
     /**

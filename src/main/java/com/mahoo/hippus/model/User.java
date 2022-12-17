@@ -12,7 +12,7 @@ import lombok.Data;
  * 用户表
  * @TableName user
  */
-@TableName(value = "user", schema = "public")
+@TableName(value = "user")
 @Data
 public class User implements Serializable {
     /**
